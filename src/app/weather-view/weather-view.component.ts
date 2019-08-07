@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../shared/services/weather.service';
-import { Observable, interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weather-view',
@@ -14,7 +13,7 @@ export class WeatherViewComponent implements OnInit {
   cityName = ['', '', '', '', '', '', '', '', ''];
   currentCity: string;
   isCityActive = false;
-  constructor(private updateWeatherData: Subscription) { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
   }
@@ -25,7 +24,6 @@ export class WeatherViewComponent implements OnInit {
   getWeather(event: any, id: number) {
     this.currentCity = event;
     this.cityName[id - 1] = event;
-    // this.hideControls[id - 1] = false;
   }
   validCityCheck(event, id: number) {
     if (!event) {
@@ -34,7 +32,6 @@ export class WeatherViewComponent implements OnInit {
     this.cityName[id - 1] = '';
   }
   enterEditMode(event, id: number) {
-    console.log(event);
     if (event) {
       this.settingCityActive[id - 1] = true;
       this.hideControls[id - 1] = true;

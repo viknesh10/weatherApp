@@ -21,7 +21,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather4.getWeather(currentCity); hideControls[3] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather4></app-weather-fetch>
+            <app-weather-fetch #fetchWeather4 (isValidCity)="validCityCheck($event, 4)" (editMode)="enterEditMode($event, 4)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(7)" *ngIf="!settingCityActive[6] && hideControls[6]">Enter
@@ -32,7 +32,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather7.getWeather(currentCity); hideControls[6] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather7></app-weather-fetch>
+            <app-weather-fetch #fetchWeather7 (isValidCity)="validCityCheck($event, 7)" (editMode)="enterEditMode($event, 7)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(2)" *ngIf="!settingCityActive[1] && hideControls[1]">Enter
@@ -43,7 +43,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather2.getWeather(currentCity); hideControls[1] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather2></app-weather-fetch>
+            <app-weather-fetch #fetchWeather2 (isValidCity)="validCityCheck($event, 2)" (editMode)="enterEditMode($event, 2)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(5)" *ngIf="!settingCityActive[4] && hideControls[4]">Enter
@@ -54,7 +54,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather5.getWeather(currentCity); hideControls[4] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather5></app-weather-fetch>
+            <app-weather-fetch #fetchWeather5 (isValidCity)="validCityCheck($event, 5)" (editMode)="enterEditMode($event, 5)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(8)" *ngIf="!settingCityActive[7] && hideControls[7]">Enter
@@ -65,7 +65,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather8.getWeather(currentCity); hideControls[7] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather8></app-weather-fetch>
+            <app-weather-fetch #fetchWeather8 (isValidCity)="validCityCheck($event, 8)" (editMode)="enterEditMode($event, 8)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(3)" *ngIf="!settingCityActive[2] && hideControls[2]">Enter
@@ -76,7 +76,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather3.getWeather(currentCity); hideControls[2] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather3></app-weather-fetch>
+            <app-weather-fetch #fetchWeather3 (isValidCity)="validCityCheck($event, 3)" (editMode)="enterEditMode($event, 3)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(6)" *ngIf="!settingCityActive[5] && hideControls[5]">Enter
@@ -87,7 +87,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather6.getWeather(currentCity); hideControls[5] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather6></app-weather-fetch>
+            <app-weather-fetch #fetchWeather6 (isValidCity)="validCityCheck($event, 6)" (editMode)="enterEditMode($event, 6)"></app-weather-fetch>
         </div>
         <div class="card card-size">
             <a class="btn btn-primary" (click)="cityClicked(9)" *ngIf="!settingCityActive[8] && hideControls[8]">Enter
@@ -98,7 +98,7 @@
                 <button class="btn btn-success"
                     (click)="fetchWeather9.getWeather(currentCity); hideControls[8] = false">Go</button>
             </div>
-            <app-weather-fetch #fetchWeather9></app-weather-fetch>
+            <app-weather-fetch #fetchWeather9 (isValidCity)="validCityCheck($event, 9)" (editMode)="enterEditMode($event, 9)"></app-weather-fetch>
         </div>
     </div>
 </div>
