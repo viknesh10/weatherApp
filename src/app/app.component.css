@@ -1,0 +1,10 @@
+.wrapper {
+    /* background-image: url('src\assets\sky-background.png'); */
+    background-color: whitesmoke;
+    height: max-content;
+}
+
+
+.navbar {
+    background-color: #525954;
+}

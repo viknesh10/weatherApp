@@ -1,0 +1,32 @@
+.card-size {
+    margin-top: 25px;
+    height: 400px;
+    overflow: scroll;
+}
+.card {
+    background-color: transparent;
+    border-color: black;
+}
+.btn-primary {
+    position: absolute;
+    width: 100px;
+    left: 35%;
+    top: 180px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    border-color: black;
+}
+.card:hover .btn-primary {
+    opacity: 1;
+}
+.form-group {
+    position: absolute;
+    width: 150px;
+    left: 25%;
+    top: 150px;
+    color: black;
+}
+.container {
+    height: max-content;
+}

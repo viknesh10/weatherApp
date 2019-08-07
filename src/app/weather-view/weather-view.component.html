@@ -1,94 +1,104 @@
 <div class="container">
-    <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">
-                        Card Header
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card Body
-                    </h5>
-                </div>
+    <div class="card-columns">
+        <div class="card card-size">
+            <button class="btn btn-primary" (click)="cityClicked(1)"
+                *ngIf="!settingCityActive[0] && hideControls[0]">Enter
+                City</button>
+            <div class="form-group" *ngIf="settingCityActive[0] && hideControls[0]">
+                <input type="text" (blur)="getWeather($event.target.value, 1)" [(ngModel)]="cityName[0]"
+                    placeholder="Enter a city name" class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather1.getWeather(currentCity); hideControls[0] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather1 (isValidCity)="validCityCheck($event, 1)" (editMode)="enterEditMode($event, 1)"></app-weather-fetch>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(4)" *ngIf="!settingCityActive[3] && hideControls[3]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[3] && hideControls[3]">
+                <input type="text" (blur)="getWeather($event.target.value, 4)" [(ngModel)]="cityName[3]"
+                    placeholder="Enter a city name" class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather4.getWeather(currentCity); hideControls[3] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather4></app-weather-fetch>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(7)" *ngIf="!settingCityActive[6] && hideControls[6]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[6] && hideControls[6]">
+                <input type="text" (blur)="getWeather($event.target.value, 7)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather7.getWeather(currentCity); hideControls[6] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather7></app-weather-fetch>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(2)" *ngIf="!settingCityActive[1] && hideControls[1]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[1] && hideControls[1]">
+                <input type="text" (blur)="getWeather($event.target.value, 2)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather2.getWeather(currentCity); hideControls[1] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather2></app-weather-fetch>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(5)" *ngIf="!settingCityActive[4] && hideControls[4]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[4] && hideControls[4]">
+                <input type="text" (blur)="getWeather($event.target.value, 5)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather5.getWeather(currentCity); hideControls[4] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather5></app-weather-fetch>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(8)" *ngIf="!settingCityActive[7] && hideControls[7]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[7] && hideControls[7]">
+                <input type="text" (blur)="getWeather($event.target.value, 8)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather8.getWeather(currentCity); hideControls[7] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather8></app-weather-fetch>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(3)" *ngIf="!settingCityActive[2] && hideControls[2]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[2] && hideControls[2]">
+                <input type="text" (blur)="getWeather($event.target.value, 3)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather3.getWeather(currentCity); hideControls[2] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather3></app-weather-fetch>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(6)" *ngIf="!settingCityActive[5] && hideControls[5]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[5] && hideControls[5]">
+                <input type="text" (blur)="getWeather($event.target.value, 6)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather6.getWeather(currentCity); hideControls[5] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather6></app-weather-fetch>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Card title
-                    </h5>
-                </div>
+        <div class="card card-size">
+            <a class="btn btn-primary" (click)="cityClicked(9)" *ngIf="!settingCityActive[8] && hideControls[8]">Enter
+                City</a>
+            <div class="form-group" *ngIf="settingCityActive[8] && hideControls[8]">
+                <input type="text" (blur)="getWeather($event.target.value, 9)" placeholder="Enter a city name"
+                    class="form-control">
+                <button class="btn btn-success"
+                    (click)="fetchWeather9.getWeather(currentCity); hideControls[8] = false">Go</button>
             </div>
+            <app-weather-fetch #fetchWeather9></app-weather-fetch>
         </div>
     </div>
 </div>

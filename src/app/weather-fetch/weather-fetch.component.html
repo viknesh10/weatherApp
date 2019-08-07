@@ -1,0 +1,15 @@
+<div *ngIf="isWeatherValid">
+    <img class="card-img" [src]="imageURL">
+    <div class="card-img-overlay">
+        <h1 style="color: #fe5436">{{ cityName }}</h1>
+        <button class="btn btn-primary" (click)="editCity()">Edit</button>
+        <h4>{{ temperature }}°C</h4>
+        <p>{{ cityName }} is experiencing {{ weatherDescription }} today.
+            It's currently {{ temperature }}°C; the high will be {{ maxTemperature }}°C and the low will be
+            {{ minTemperature }}°C</p>
+        <p>The Sun is expected to rise at {{ sunrise }} GMT and expected to set at {{ sunset }} GMT</p>
+        <p>The Humidity is at {{ humidity }}% and the wind is blowing at {{ windSpeed }} km/hr towards
+            {{ windDirection }}</p>
+        <p>Pressure at {{ cityName }} is {{ pressure }} hPa sea-level</p>
+    </div>
+</div>
